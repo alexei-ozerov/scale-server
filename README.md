@@ -1,5 +1,5 @@
 # Scale Server
-A simple implementation of a server which randomly generates a scale to practice using Go Lang and Templates.
+A simple implementation of a server which randomly generates a scale to practice using Go Lang and Templates. Practice concept from Paul T's Technical Vocabulary Codex.
 
 ## Run Instructions
 1. Install Go Lang v1.14 or greater.
