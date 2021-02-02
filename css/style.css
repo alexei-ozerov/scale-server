@@ -1,0 +1,63 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+    padding: 0;
+    width: 25em;
+    margin: 0 auto;
+    padding: 1em 0;
+    line-height: 150%;
+    zoom: 1; /* maybe fix IE stupidness */
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+}
+
+h1 {
+    font-family: 'Nanum Gothic Coding', monospace;
+    text-align: center;
+    font-size: 3em;
+}
+
+.count {
+    font-weight: bold;
+    color: rgb(172, 201, 255);
+    text-align: center;
+    font-size: 1em;
+}
+
+.scale {
+    font-weight: bold;
+    color: cornflowerblue;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.button {
+    border: none;
+    color: black;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 2px;
+}
+
+table {
+    padding: 0.5em;
+    border-bottom: 1px solid #333;
+    border-spacing: 0;
+}
+
+table td,
+table th {
+    width: 8em;
+    vertical-align: top;
+    text-align: center;
+    padding: 0;
+}
+
+table.attr {
+    border-top: 1px solid #333;
+    margin-left: auto;
+    margin-right: auto;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Scale Server</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+        <link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA/2oAAP+EAAD/4QAABQUFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABERMzAAAAAAERERMwAAAAERERETAAAAERERERMwAAEREREREzAAARERERQRMAABEQAAAREgAAEQAAAAARAAAREAAAAAAAABERERAAAAAAEREREQAAAAABERERAAAAAAAAAAEAAAAAAAAAAAAAD//wAA//8AAPwHAAD8AwAA+AMAAPABAADgAQAA4AEAAOPhAADn+QAA4/8AAOA/AADgHwAA8B8AAP/fAAD//wAA" rel="icon" type="image/x-icon" />
+    </head>
+    <body>
+        <div>
+            <h1>Scale Server</h1>
+            <p class="count">The date today is {{.Date}}</p>
+            <p class="count">And the time is {{.Time}}</p>
+            <br/>
+            <table class="attr">
+                <tr>
+                    <td>
+                        <form action="/scale" method="post">
+                            <input type="submit" class="button" name="GenScale" value="Generate Scale">
+                        </form>
+                    </td>
+                    <td>
+                        <form action="/" method="post">
+                            <input type="submit" class="button" name="GenScale" value="Clear Data">
+                        </form>
+                    </td>
+                </tr>
+            </table>
+            <br/>
+            <p class="scale" id="myScale">{{.Scale}} {{ .Type }} {{ .Direction }} in {{ .Interval }}</p>
+        </div>
+    </body>
+</html>
