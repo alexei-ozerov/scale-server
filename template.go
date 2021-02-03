@@ -22,9 +22,6 @@ type ScaleVariables struct {
 	Type      string
 	Direction string
 	Interval  string
-	GenScale  bool
-	GenInt    bool
-	Clear     bool
 }
 
 // HomePage :: Update HTML
@@ -61,20 +58,15 @@ func ScaleSelect(w http.ResponseWriter, r *http.Request) {
 	randDirections := RandNum(len(directions))
 	randIntervals := RandNum(len(intervals))
 
-	// Init Time Value
-	now := time.Now()
-
 	// Instantiate Struct ScaleData
+	now := time.Now()
 	ScaleData := ScaleVariables{
-		Date:      now.Format("02-01-2006"),
-		Time:      now.Format("15:04:05"),
+		Date:      now.Format("01-01-2000"),
+		Time:      now.Format("01:01:01"),
 		Scale:     scales[randScale],
 		Type:      types[randTypes],
 		Direction: directions[randDirections],
 		Interval:  intervals[randIntervals],
-		GenScale:  false,
-		GenInt:    false,
-		Clear:     true,
 	}
 
 	// Parse Template File, Handle Error
@@ -98,6 +90,11 @@ func RandNum(lenNum int) (randInt int) {
 func main() {
 	http.Handle("/css/", http.StripPrefix("/css/", http.FileServer(http.Dir("css"))))
 	http.Handle("/templates/", http.StripPrefix("/templates/", http.FileServer(http.Dir("templates"))))
+
+	log.Print("########################################")
+	log.Print("Serving Webpage On http://localhost:8080")
+	log.Print("########################################")
+
 	http.HandleFunc("/", HomePage)
 	http.HandleFunc("/scale", ScaleSelect)
 	log.Fatal(http.ListenAndServe(":8080", nil))
